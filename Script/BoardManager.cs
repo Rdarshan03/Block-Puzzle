@@ -48,9 +48,12 @@ public class BoardManager : MonoBehaviour
     
     public void sblock()
     {
-
+        if (blockPrefab.Length <= 0) return;
+        //print("asssss" + list.Count);
+        //print("asssss" + blockPrefab.Length);
         for (int i = list.Count; i < 3; i++)
         {
+        
             Piece piece = Instantiate(blockPrefab[Random.Range(0, blockPrefab.Length)], Vector3.zero, Quaternion.identity).GetComponent<Piece>();
             piece.Scale(false, 0.2f);
             list.Add(piece);
